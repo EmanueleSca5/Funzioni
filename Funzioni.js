@@ -1,50 +1,29 @@
 let tiri = Number(prompt("Quanti tiri effettuerete?"))
-let punteggio1 = 0
+let giocatore1 = 0
+let giocatore2 = 0
 
-function giocatore1(giocatore){
-    for(let i = 1; i <= tiri; i++){
-       let totale = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-       console.log(totale);
-      punteggio1 = punteggio1 + totale
-        
-        
-        
-        
-       }
-      
-     console.log(giocatore + " hai effettuato " + punteggio1 + " punti");
-     return punteggio1
-      }
 
-      let punteggio2 = 0
-      function giocatore2(giocatore){
-    for(let i = 1; i <= tiri; i++){
-       let totale = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-       console.log(totale);
-     punteggio2 = punteggio2 + totale
-        
-        
-        
-        
-       }
+function play(x, y){
+    for(let i = 0; i < tiri; i++){
+ giocatore1 = giocatore1 + Math.floor(Math.random()*(6 - 1 + 1) + 1)
+ giocatore2 = giocatore2 + Math.floor(Math.random()*(6 - 1 + 1) + 1)
 
-       console.log(giocatore + " hai effettuato " + punteggio2 + " punti");
-       return punteggio2
-       
-       
-      
-     
-      }
-       
-      
-       giocatore1("luca")
-       giocatore2("ema")
+    }
 
-       if(punteggio1 > punteggio2){
-        console.log("LUCA HAI VINTO");
+    if(giocatore1 > giocatore2){
+        console.log(x + " hai vinto con " + giocatore1 + " punti");
+        console.log(y + " hai perso con " + giocatore2 + " punti");
         
-       }else{
-        console.log("EMA HAI VINTO");
+    }else if(giocatore1 < giocatore2){
+        console.log(y + " hai vinto con " + giocatore2 + " punti");
+        console.log(x + " hai perso con " + giocatore1 + " punti");
         
-       }
+    }else{
+        console.log("PAREGGIOOOOOOO");
+        
+    }
+        
+}
+  
        
+play("emanuele", "luca")
